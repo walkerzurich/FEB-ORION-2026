@@ -23,8 +23,8 @@ function convertHotspots(hotspots) {
           data: { target: h.targetRoom || h.target },
           html: `
             <svg width="64" height="64" viewBox="0 0 64 64" style="display:block;">
-              <circle cx="32" cy="32" r="30" fill="rgba(220,220,220,0.7)" stroke="#fff" stroke-width="4"/>
-              <path d="M20 38 L32 26 L44 38 Q32 34 20 38 Z" fill="#222" stroke="#222" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="32" cy="32" r="28" fill="rgba(148, 56, 227, 0.9)" stroke="#EEB463" stroke-width="4"/>
+              <path d="M20 38 L32 26 L44 38 Q32 34 20 38 Z" fill="#271C51" stroke="#271C51" stroke-width="2" stroke-linejoin="round"/>
             </svg>
           `,
           width: 64,
@@ -55,8 +55,8 @@ function convertHotspots(hotspots) {
           data: { target: h.targetRoom || h.target },
           html: `
             <svg width="64" height="64" viewBox="0 0 64 64" style="display:block;">
-              <circle cx="32" cy="32" r="30" fill="rgba(220,220,220,0.7)" stroke="#fff" stroke-width="4"/>
-              <path d="M20 38 L32 26 L44 38 Q32 34 20 38 Z" fill="#222" stroke="#222" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="32" cy="32" r="28" fill="rgba(148, 56, 227, 0.9)" stroke="#EEB463" stroke-width="4"/>
+              <path d="M20 38 L32 26 L44 38 Q32 34 20 38 Z" fill="#271C51" stroke="#271C51" stroke-width="2" stroke-linejoin="round"/>
             </svg>
           `,
           width: 64,

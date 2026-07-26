@@ -50,6 +50,15 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+				// FEB Brand Colors
+				'feb-purple': {
+					'darkest': '#1a0f45',
+					'dark': '#2D1B6E',
+					'DEFAULT': '#3D2B8F',
+					'mid': '#4B35A0',
+					'light': '#6B4FBB',
+					'lighter': '#8B6FDB',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
