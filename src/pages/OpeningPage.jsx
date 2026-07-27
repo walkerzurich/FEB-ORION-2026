@@ -65,7 +65,7 @@ export default function OpeningPage() {
                 letterSpacing: "0.02em",
               }}
             >
-              Journey Of Economicssss
+              Journey Of Economics
             </h1>
           </motion.div>
 
