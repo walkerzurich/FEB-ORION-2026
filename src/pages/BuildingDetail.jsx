@@ -184,7 +184,7 @@ export default function BuildingDetail() {
         {/* ===== HERO FULL WIDTH ===== */}
         <div className="detail-hero">
           <ImageOptimizer
-            src={building.thumbnail || "/images/logo.PNG"}
+            src={building.thumbnail || "/images/LOGO FEB UNDIP.png"}
             alt={`${building.name} – foto eksterior`}
             className="w-full h-full object-cover"
           />

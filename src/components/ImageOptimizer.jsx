@@ -4,7 +4,7 @@ const ImageOptimizer = ({
   src, 
   alt, 
   className = "", 
-  fallbackSrc = "/images/logo.PNG",
+  fallbackSrc = "/images/LOGO FEB UNDIP.png",
   priority = false,
   ...props 
 }) => {

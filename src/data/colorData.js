@@ -1,18 +1,26 @@
 export const colorPalette = [
   {
-    name: "Orange Gelap",
-    hex: "#D84A1C"
+    name: "Dark Purple",
+    hex: "#271C51"
   },
   {
-    name: "Orange Terang",
-    hex: "#FF8719"
+    name: "Purple",
+    hex: "#9438E3"
   },
   {
-    name: "Kuning",
-    hex: "#F6EC0E"
+    name: "Blue",
+    hex: "#5F5EBB"
   },
   {
-    name: "Hijau Mint",
-    hex: "#40F7B0"
+    name: "Golden Orange",
+    hex: "#EEB463"
+  },
+  {
+    name: "Light Gray",
+    hex: "#DDDADE"
+  },
+  {
+    name: "White",
+    hex: "#FFFFFF"
   }
 ];

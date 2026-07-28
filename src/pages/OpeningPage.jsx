@@ -10,10 +10,10 @@ export default function OpeningPage() {
   return (
     <>
       <Helmet>
-        <title>Journey Of Economics – FEB UNDIP</title>
+        <title>Grizzy Compass – FEB UNDIP</title>
         <meta
           name="description"
-          content="Selamat datang di Virtual Tour FEB UNDIP – Journey Of Economics. Jelajahi Fakultas Ekonomika dan Bisnis Universitas Diponegoro."
+          content="Selamat datang di Virtual Tour FEB UNDIP – Grizzy Compass. Jelajahi Fakultas Ekonomika dan Bisnis Universitas Diponegoro."
         />
       </Helmet>
 
@@ -43,9 +43,9 @@ export default function OpeningPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <ImageOptimizer
-              src="/images/logo.PNG"
-              alt="Logo Journey Of Economics FEB UNDIP"
-              className="mx-auto w-52 h-52 object-contain logo-glow-multi"
+              src="/images/LOGO ORION 26.PNG"
+              alt="Logo Grizzy Compass FEB UNDIP"
+              className="mx-auto w-56 h-56 object-contain logo-glow-multi"
               priority={true}
             />
           </motion.div>
@@ -57,15 +57,15 @@ export default function OpeningPage() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <h1
-              className="text-white font-bold leading-tight"
+              className="text-white font-bold leading-tight tracking-wider"
               style={{
-                fontSize: "clamp(1.8rem, 6vw, 2.6rem)",
-                fontFamily: "'Georgia', 'Times New Roman', serif",
-                textShadow: "0 2px 20px rgba(0,0,0,0.4)",
-                letterSpacing: "0.02em",
+                fontSize: "clamp(2rem, 6.5vw, 3.2rem)",
+                fontFamily: "'Inter', sans-serif",
+                textShadow: "0 2px 25px rgba(148,56,227,0.5)",
+                letterSpacing: "0.04em",
               }}
             >
-              Journey Of Economics
+              Grizzy Compass
             </h1>
           </motion.div>
 

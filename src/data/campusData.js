@@ -4,7 +4,7 @@ export const campusBuildings = [
     name: "Fasilitas FEB Undip",
     description: "Fasilitas di luar gedung utama FEB.",
     type: "outdoor",
-    thumbnail: "/images/fotoGedung/Parkiran 3.jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/FASILITAS.jpg",
     rooms: [
       {
         id: "video-fasilitas-feb",
@@ -199,7 +199,7 @@ export const campusBuildings = [
     name: "Gedung A",
     description: "Gedung A FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Gedung A.jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/GEDUNG A.jpg",
     rooms: [
       {
         id: "video-gedung-a",
@@ -242,7 +242,7 @@ export const campusBuildings = [
     name: "Gedung B",
     description: "Gedung B FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Gedung B(1).jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/GEDUNG B.jpg",
     rooms: [
       {
         id: "video-gedung-b",
@@ -304,7 +304,7 @@ export const campusBuildings = [
     name: "Gedung C",
     description: "Gedung C FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Gedung C.jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/GEDUNG C.jpg",
     rooms: [
       {
         id: "video-gedung-c",
@@ -385,7 +385,7 @@ export const campusBuildings = [
     name: "Gedung IUP",
     description: "Gedung IUP FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Gedung IUP(3).jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/GEDUNG IUP.jpg",
     rooms: [
       {
         id: "video-gedung-iup",
@@ -485,7 +485,7 @@ export const campusBuildings = [
     name: "Gedung KWU",
     description: "Gedung Kewirausahaan FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Lab KWU(2).jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/LAB. KWU .jpg",
     rooms: [
       {
         id: "video-gedung-kwu",
@@ -585,7 +585,7 @@ export const campusBuildings = [
     name: "Dekanat",
     description: "Gedung Dekanat FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Dekanat.jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/DEKANAT.jpg",
     rooms: [
       {
         id: "pintu-utama-dekanat",
@@ -639,7 +639,7 @@ export const campusBuildings = [
     name: "Gedung PKM",
     description: "Gedung PKM FEB",
     type: "main",
-    thumbnail: "/images/fotoGedung/Gedung PKM ( Fasilitas ).jpg",
+    thumbnail: "/images/Gedung FEB UNDIP/GEDUNG PKM.jpg",
     rooms: [
       {
         id: "video-gedung-pkm",

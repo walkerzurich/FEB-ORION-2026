@@ -47,8 +47,8 @@ export default function FEBDescriptionPage() {
         {/* ======= HERO ======= */}
         <div className="feb-desc-hero">
           <ImageOptimizer
-            src="/images/fotoGedung/Dekanat.jpg"
-            alt="FEB UNDIP"
+            src="/images/Gedung FEB UNDIP/DEKANAT.jpg"
+            alt="Gedung Dekanat FEB UNDIP"
             className="w-full h-full object-cover"
           />
           <div className="feb-desc-hero-overlay" />
