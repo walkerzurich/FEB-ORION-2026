@@ -1,44 +1,52 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Users, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { logoList } from "@/data/LogoList";
+import { ormawaList } from "@/data/LogoList";
 
-const ormawaLogos =
-  logoList.find((l) => l.folder.includes("Logo Ormawa"))?.logos || [];
-const ukmLogos =
-  logoList.find((l) => l.folder.includes("Logo UKM"))?.logos || [];
+const ormawaOnly = ormawaList.filter((o) => o.category === "ormawa");
+const ukmOnly    = ormawaList.filter((o) => o.category === "ukm");
 
 const tabs = [
-  { key: "ormawa", label: "Ormawa", logos: ormawaLogos, folder: "Logo Ormawa" },
-  { key: "ukm", label: "UKM", logos: ukmLogos, folder: "Logo UKM" },
+  { key: "ormawa", label: "Ormawa", data: ormawaOnly },
+  { key: "ukm",   label: "UKM",    data: ukmOnly },
 ];
 
-function LogoCard({ src, alt, index }) {
+function OrgCard({ item, index }) {
   const [err, setErr] = useState(false);
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.82 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.3, delay: index * 0.035 }}
-      className="ormawa-logo-card group"
+      initial={{ opacity: 0, y: 16, scale: 0.92 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.32, delay: index * 0.04 }}
+      className="ormawa-org-card group"
     >
-      {!err ? (
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105"
-          onError={() => setErr(true)}
-          loading="lazy"
-        />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center">
-          <span className="text-gray-400 text-xs text-center px-1 leading-tight">
-            {alt}
-          </span>
-        </div>
-      )}
+      {/* Logo area */}
+      <div className="ormawa-org-logo-box">
+        {!err ? (
+          <img
+            src={item.logo}
+            alt={item.shortName}
+            className="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-108"
+            onError={() => setErr(true)}
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="text-[#EEB463] font-bold text-base text-center px-2 leading-tight">
+              {item.shortName}
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Name area */}
+      <div className="ormawa-org-info">
+        <div className="ormawa-org-short">{item.shortName}</div>
+        <div className="ormawa-org-name">{item.name}</div>
+      </div>
     </motion.div>
   );
 }
@@ -55,7 +63,7 @@ export default function OrmawaPage() {
         <title>Ormawa & UKM – FEB UNDIP</title>
         <meta
           name="description"
-          content="Organisasi Mahasiswa (Ormawa) dan Unit Kegiatan Mahasiswa (UKM) di Fakultas Ekonomika dan Bisnis UNDIP."
+          content="Organisasi Mahasiswa (Ormawa) dan Unit Kegiatan Mahasiswa (UKM) di Fakultas Ekonomika dan Bisnis Universitas Diponegoro."
         />
       </Helmet>
 
@@ -77,7 +85,7 @@ export default function OrmawaPage() {
                 Ormawa & UKM
               </h1>
               <p className="text-white/50 text-xs mt-0.5">
-                FEB Universitas Diponegoro
+                FEB Universitas Diponegoro · {ormawaList.length} Organisasi
               </p>
             </div>
           </div>
@@ -85,7 +93,10 @@ export default function OrmawaPage() {
           {/* ====== TABS ====== */}
           <div
             className="flex gap-1 p-1 mb-6 rounded-2xl"
-            style={{ background: "rgba(39,28,81,0.7)", border: "1px solid rgba(221,218,222,0.18)" }}
+            style={{
+              background: "rgba(39,28,81,0.7)",
+              border: "1px solid rgba(221,218,222,0.18)",
+            }}
           >
             {tabs.map((tab) => (
               <button
@@ -106,17 +117,14 @@ export default function OrmawaPage() {
                 }}
               >
                 {tab.label}
-                <span
-                  className="ml-1.5 text-xs"
-                  style={{ opacity: 0.6 }}
-                >
-                  ({tab.logos.length})
+                <span className="ml-1.5 text-xs" style={{ opacity: 0.6 }}>
+                  ({tab.data.length})
                 </span>
               </button>
             ))}
           </div>
 
-          {/* ====== LOGO GRID ====== */}
+          {/* ====== GRID ====== */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -125,27 +133,16 @@ export default function OrmawaPage() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              {currentTab?.logos.length === 0 ? (
+              {currentTab?.data.length === 0 ? (
                 <div className="text-center py-16">
-                  <div
-                    className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
-                    style={{ background: "rgba(255,255,255,0.06)" }}
-                  >
-                    <span className="text-2xl opacity-40">🏛️</span>
-                  </div>
                   <p className="text-white/40 text-sm">
-                    Data logo belum tersedia
+                    Data belum tersedia
                   </p>
                 </div>
               ) : (
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                  {currentTab.logos.map((logo, i) => (
-                    <LogoCard
-                      key={`${logo}-${i}`}
-                      src={`/images/${currentTab.folder}/${logo}`}
-                      alt={logo.replace(/\.[^.]+$/, "").replace(/^\d+\.\s*/, "")}
-                      index={i}
-                    />
+                <div className="ormawa-org-grid">
+                  {currentTab.data.map((item, i) => (
+                    <OrgCard key={item.shortName} item={item} index={i} />
                   ))}
                 </div>
               )}
