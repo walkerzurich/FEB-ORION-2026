@@ -18,6 +18,20 @@ const buildingSubtitles = {
   "gedung-pkm": "Organisasi Mahasiswa",
 };
 
+// Ambient floating particles configuration
+const ambientParticles = [
+  { id: 1, top: "12%", left: "8%",  size: 5, duration: 6, delay: 0 },
+  { id: 2, top: "28%", left: "88%", size: 7, duration: 8.5, delay: 1 },
+  { id: 3, top: "48%", left: "18%", size: 4, duration: 7, delay: 0.5 },
+  { id: 4, top: "68%", left: "80%", size: 6, duration: 9, delay: 1.5 },
+  { id: 5, top: "82%", left: "12%", size: 5, duration: 6.5, delay: 2 },
+  { id: 6, top: "38%", left: "48%", size: 4, duration: 8, delay: 0.8 },
+  { id: 7, top: "15%", left: "62%", size: 6, duration: 7.5, delay: 1.2 },
+  { id: 8, top: "88%", left: "55%", size: 5, duration: 9.5, delay: 2.2 },
+  { id: 9, top: "5%",  left: "35%", size: 4, duration: 7.2, delay: 0.3 },
+  { id: 10, top: "95%", left: "85%", size: 5, duration: 8.2, delay: 1.8 },
+];
+
 export default function HomePage() {
   const navigate = useNavigate();
 
@@ -31,26 +45,88 @@ export default function HomePage() {
         />
       </Helmet>
 
-      <div className="home-root relative overflow-hidden bg-[#191238]">
-        {/* Modern Background Gradient Glow Blobs */}
-        <div
-          className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-20 pointer-events-none"
+      <div className="home-root relative overflow-hidden bg-home-mesh min-h-screen">
+        {/* Layer 1: Dot Matrix Micro-Texture Overlay */}
+        <div className="absolute inset-0 bg-dot-texture opacity-50 pointer-events-none z-0" />
+
+        {/* Layer 2: Animated Vibrant Ambient Light Blobs */}
+        <motion.div
+          className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full pointer-events-none opacity-40 mix-blend-screen z-0"
           style={{
-            background: "radial-gradient(circle, #9438E3 0%, transparent 70%)",
+            background: "radial-gradient(circle, #9438E3 0%, rgba(148,56,227,0.35) 45%, transparent 70%)",
           }}
+          animate={{
+            scale: [1, 1.18, 1],
+            x: [0, 35, 0],
+            y: [0, 25, 0],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div
-          className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full opacity-15 pointer-events-none"
+
+        <motion.div
+          className="absolute top-1/4 -right-36 w-[650px] h-[650px] rounded-full pointer-events-none opacity-35 mix-blend-screen z-0"
           style={{
-            background: "radial-gradient(circle, #5F5EBB 0%, transparent 70%)",
+            background: "radial-gradient(circle, #5F5EBB 0%, rgba(95,94,187,0.35) 45%, transparent 70%)",
           }}
+          animate={{
+            scale: [1, 1.22, 1],
+            x: [0, -45, 0],
+            y: [0, 35, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
-        <div
-          className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full opacity-15 pointer-events-none"
+
+        <motion.div
+          className="absolute -bottom-40 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none opacity-30 mix-blend-screen z-0"
           style={{
-            background: "radial-gradient(circle, #EEB463 0%, transparent 70%)",
+            background: "radial-gradient(circle, #EEB463 0%, rgba(238,180,99,0.3) 40%, transparent 70%)",
           }}
+          animate={{
+            scale: [1, 1.16, 1],
+            x: [0, 30, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
+
+        <motion.div
+          className="absolute top-1/2 left-1/3 w-[500px] h-[500px] rounded-full pointer-events-none opacity-25 mix-blend-screen z-0"
+          style={{
+            background: "radial-gradient(circle, #8A2BE2 0%, transparent 65%)",
+          }}
+          animate={{
+            scale: [1, 1.25, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+        />
+
+        {/* Layer 3: Floating Ambient Micro Particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          {ambientParticles.map((p) => (
+            <motion.div
+              key={p.id}
+              className="absolute rounded-full bg-[#EEB463]/70 shadow-[0_0_10px_#EEB463]"
+              style={{
+                top: p.top,
+                left: p.left,
+                width: p.size,
+                height: p.size,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.2, 0.85, 0.2],
+                scale: [0.8, 1.5, 0.8],
+              }}
+              transition={{
+                duration: p.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: p.delay,
+              }}
+            />
+          ))}
+        </div>
 
         <div className="home-container-inner relative z-10">
 
