@@ -116,6 +116,15 @@ img {
 /* ========== HOTSPOT ========== */
 .hotspot { cursor: pointer; transition: var(--transition); }
 .hotspot:hover { transform: scale(1.12); }
+.psv-marker {
+  transition: none !important;
+}
+.custom-hotspot-container {
+  transition: none !important;
+}
+.custom-hotspot-container:hover .hotspot-icon {
+  transform: scale(1.18);
+}
 
 /* ========== LOADING ========== */
 .loading-spinner {

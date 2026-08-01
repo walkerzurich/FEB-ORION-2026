@@ -213,10 +213,11 @@ export const campusBuildings = [
         id: "ruang-kelas-a",
         name: "Ruang Kelas",
         panorama: "/images/panorama360/Gedung A/RUANG KELAS A, B, C.jpeg",
+        defaultLong: -Math.PI * 0.35,
         hotspots: [
           {
             id: "to-podcast-a",
-            position: { x: 25, y: -5, z: 20 },
+            position: { x: -20, y: -5, z: 10 },
             targetRoom: "podcast-room-a",
             label: "Podcast Room",
           },
@@ -226,10 +227,11 @@ export const campusBuildings = [
         id: "podcast-room-a",
         name: "Podcast Room",
         panorama: "/images/panorama360/Gedung A/PODCAST ROOM.jpeg",
+        defaultLong: Math.PI,
         hotspots: [
           {
             id: "to-ruang-kelas-a",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: 185, y: -5, z: 500 },
             targetRoom: "ruang-kelas-a",
             label: "Ruang Kelas",
           },
@@ -288,10 +290,11 @@ export const campusBuildings = [
         id: "ruang-kelas-b",
         name: "Ruang Kelas",
         panorama: "/images/panorama360/Gedung B/RUANG KELAS A, B, C.jpeg",
+        defaultLong: -Math.PI * 0.35,
         hotspots: [
           {
             id: "to-lobby-b",
-            position: { x: 30, y: -5, z: -10 },
+            position: { x: -12, y: -5, z: 22 },
             targetRoom: "lobby-gedung-b",
             label: "Lobby Gedung B",
           },
@@ -320,10 +323,22 @@ export const campusBuildings = [
         panorama: "/images/panorama360/Gedung C/LOBBY GEDUNG C.jpeg",
         hotspots: [
           {
+            id: "to-kantin-c",
+            position: { x: -25, y: -15, z: 20 },
+            targetRoom: "kantin-feb-c",
+            label: "Kantin FEB",
+          },
+          {
             id: "to-hall-c",
-            position: { x: 25, y: -5, z: 20 },
+            position: { x: 0, y: 15, z: 25 },
             targetRoom: "hall-gedung-c",
             label: "Hall Gedung C",
+          },
+          {
+            id: "to-ruang-kelas-c",
+            position: { x: 25, y: -2, z: 15 },
+            targetRoom: "ruang-kelas-c",
+            label: "Ruang Kelas",
           },
         ],
       },
@@ -338,30 +353,19 @@ export const campusBuildings = [
             targetRoom: "lobby-gedung-c",
             label: "Lobby Gedung C",
           },
-          {
-            id: "to-ruang-kelas-c",
-            position: { x: 30, y: -5, z: 10 },
-            targetRoom: "ruang-kelas-c",
-            label: "Ruang Kelas",
-          },
-          {
-            id: "to-kantin-c",
-            position: { x: -30, y: -5, z: 10 },
-            targetRoom: "kantin-feb-c",
-            label: "Kantin FEB",
-          },
         ],
       },
       {
         id: "ruang-kelas-c",
         name: "Ruang Kelas",
         panorama: "/images/panorama360/Gedung C/RUANG KELAS A, B, C.jpeg",
+        defaultLong: -Math.PI * 0.35,
         hotspots: [
           {
-            id: "to-hall-c",
-            position: { x: -30, y: -5, z: -10 },
-            targetRoom: "hall-gedung-c",
-            label: "Hall Gedung C",
+            id: "to-lobby-c",
+            position: { x: -12, y: -5, z: 22 },
+            targetRoom: "lobby-gedung-c",
+            label: "Lobby Gedung C",
           },
         ],
       },
@@ -371,10 +375,10 @@ export const campusBuildings = [
         panorama: "/images/panorama360/Gedung C/KANTIN FEB.jpeg",
         hotspots: [
           {
-            id: "to-hall-c",
+            id: "to-lobby-c",
             position: { x: 30, y: -5, z: -10 },
-            targetRoom: "hall-gedung-c",
-            label: "Hall Gedung C",
+            targetRoom: "lobby-gedung-c",
+            label: "Lobby Gedung C",
           },
         ],
       },
@@ -493,7 +497,7 @@ export const campusBuildings = [
         panorama: "/images/panorama360/Lab. KWU/HALL KWU.jpeg",
         hotspots: [],
         video:
-          "https://video-guide-bucket.s3.ap-southeast-2.amazonaws.com/Gedung+Lab+KWU.mp4",
+          "https://res.cloudinary.com/tfdsnfgf/video/upload/v1785551826/kwu_1_1_sbwcvc.mp4",
       },
       {
         id: "hall-kwu",

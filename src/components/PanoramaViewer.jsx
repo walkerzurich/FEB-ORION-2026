@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "photo-sphere-viewer/dist/photo-sphere-viewer.css";
+import "photo-sphere-viewer/dist/plugins/markers.css";
 import { Loader2, Info } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "@/components/ui/use-toast";
@@ -8,70 +9,55 @@ import { toast } from "@/components/ui/use-toast";
 // x: longitude (0-1), y: latitude (0-1)
 function convertHotspots(hotspots) {
   if (!hotspots) return [];
-  // Fallback: jika ada x/y/z, konversi ke longitude/latitude kasar
   return hotspots
     .map((h, i) => {
-      // Jika sudah ada x/y (0-1), gunakan langsung
-      if (typeof h.x === "number" && typeof h.y === "number") {
-        const longitude = h.x * 2 * Math.PI;
-        const latitude = (h.y - 0.5) * Math.PI;
-        return {
-          id: `hotspot-${i}`,
-          longitude,
-          latitude,
-          tooltip: h.label,
-          data: { target: h.targetRoom || h.target },
-          html: `
-            <svg width="64" height="64" viewBox="0 0 64 64" style="display:block;">
-              <circle cx="32" cy="32" r="28" fill="rgba(148, 56, 227, 0.9)" stroke="#EEB463" stroke-width="4"/>
-              <path d="M20 38 L32 26 L44 38 Q32 34 20 38 Z" fill="#271C51" stroke="#271C51" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-          `,
-          width: 64,
-          height: 64,
-          anchor: "center center",
-          // Add tooltip positioning to ensure consistent distance
-          tooltip: {
-            content: h.label,
-            position: "top", // Force tooltip to appear above marker
-            offset: 30, // Consistent offset distance
-          },
-        };
-      }
-      // Jika x/y/z (THREE), konversi ke spherical
-      if (h.position) {
+      let longitude = 0;
+      let latitude = 0;
+
+      if (typeof h.yaw === "number") {
+        longitude = (h.yaw * Math.PI) / 180;
+        latitude = typeof h.pitch === "number" ? (h.pitch * Math.PI) / 180 : -0.15;
+      } else if (typeof h.x === "number" && typeof h.y === "number") {
+        longitude = h.x * 2 * Math.PI;
+        latitude = (0.5 - h.y) * Math.PI;
+      } else if (h.position) {
         const { x, y, z } = h.position;
-        const r = Math.sqrt(x * x + y * y + z * z);
-        if (!r || isNaN(r)) {
-          return null;
+        // Jika x di atas 30 (seperti x: 180), anggap langsung sebagai Derajat (0-360 deg)
+        if (Math.abs(x) > 30) {
+          longitude = (x * Math.PI) / 180;
+          latitude = typeof y === "number" ? (y * Math.PI) / 180 : -0.15;
+        } else {
+          const r = Math.sqrt(x * x + y * y + z * z);
+          if (!r || isNaN(r)) return null;
+          longitude = Math.atan2(x, z);
+          if (longitude < 0) longitude += 2 * Math.PI;
+          latitude = Math.asin(Math.max(-1, Math.min(1, y / r)));
         }
-        const longitude = Math.atan2(x, z);
-        const latitude = Math.acos(y / r) - Math.PI / 2;
-        return {
-          id: `hotspot-${i}`,
-          longitude,
-          latitude,
-          tooltip: h.label,
-          data: { target: h.targetRoom || h.target },
-          html: `
-            <svg width="64" height="64" viewBox="0 0 64 64" style="display:block;">
-              <circle cx="32" cy="32" r="28" fill="rgba(148, 56, 227, 0.9)" stroke="#EEB463" stroke-width="4"/>
-              <path d="M20 38 L32 26 L44 38 Q32 34 20 38 Z" fill="#271C51" stroke="#271C51" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-          `,
-          width: 64,
-          height: 64,
-          anchor: "center center",
-          // Add tooltip positioning to ensure consistent distance
-          tooltip: {
-            
-            content: h.label,
-            position: "top", // Force tooltip to appear above marker
-            offset: 30, // Consistent offset distance
-          },
-        };
+      } else {
+        return null;
       }
-      return null;
+
+      return {
+        id: h.id || `hotspot-${i}`,
+        longitude,
+        latitude,
+        data: { target: h.targetRoom || h.target },
+        html: `
+          <div class="custom-hotspot-container" style="display: flex; flex-direction: column; align-items: center; cursor: pointer; pointer-events: auto;">
+            <div class="hotspot-icon" style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #4f46e5); border: 2.5px solid #EEB463; box-shadow: 0 4px 14px rgba(0,0,0,0.5), 0 0 10px rgba(238,180,99,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+              </svg>
+            </div>
+            <div style="margin-top: 4px; background: rgba(15, 23, 42, 0.92); color: #FFFFFF; padding: 4px 10px; border-radius: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; border: 1.5px solid rgba(238, 180, 99, 0.7); box-shadow: 0 4px 12px rgba(0,0,0,0.5); text-align: center; font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.2px;">
+              ${h.label || "Navigasi"}
+            </div>
+          </div>
+        `,
+        width: 140,
+        height: 75,
+        anchor: "center center",
+      };
     })
     .filter(Boolean);
 }
@@ -96,11 +82,14 @@ const PanoramaViewer = ({ room, onHotspotClick, height = "100%" }) => {
         if (!isMounted || !viewerRef.current || !room) return;
         PSV = _PSV.default || _PSV;
         const MarkersPlugin = _Markers.MarkersPlugin || _Markers.default;
+        const initLong = room.defaultLong !== undefined ? room.defaultLong : Math.PI;
+        const initLat = room.defaultLat !== undefined ? room.defaultLat : 0;
         psvInstance.current = new PSV.Viewer({
           container: viewerRef.current,
           panorama: room.panorama,
           navbar: "zoom move fullscreen",
-          defaultLong: Math.PI,
+          defaultLong: initLong,
+          defaultLat: initLat,
           plugins: [MarkersPlugin],
         });
         markersPluginRef.current =
@@ -145,7 +134,16 @@ const PanoramaViewer = ({ room, onHotspotClick, height = "100%" }) => {
   // Update panorama and markers when image or hotspots change
   useEffect(() => {
     if (psvInstance.current && room) {
-      psvInstance.current.setPanorama(room.panorama);
+      const long = room.defaultLong !== undefined ? room.defaultLong : Math.PI;
+      const lat = room.defaultLat !== undefined ? room.defaultLat : 0;
+      psvInstance.current
+        .setPanorama(room.panorama)
+        .then(() => {
+          if (psvInstance.current) {
+            psvInstance.current.rotate({ longitude: long, latitude: lat });
+          }
+        })
+        .catch(() => {});
     }
     if (markersPluginRef.current && room && room.hotspots) {
       markersPluginRef.current.setMarkers(convertHotspots(room.hotspots));
