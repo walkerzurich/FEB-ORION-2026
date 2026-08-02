@@ -261,13 +261,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-pojok-kemenkeu",
-            position: { x: 30, y: -5, z: 10 },
+            position: { x: 1, y: -2, z: -3 },
             targetRoom: "pojok-kemenkeu-b",
             label: "Pojok Kemenkeu",
           },
           {
             id: "to-ruang-kelas-b",
-            position: { x: -30, y: -5, z: 10 },
+            position: { x: 120, y: -5, z: 10 },
             targetRoom: "ruang-kelas-b",
             label: "Ruang Kelas",
           },
@@ -280,7 +280,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-b",
-            position: { x: -30, y: -5, z: -10 },
+            position: { x: 0, y: -5, z: 20 },
             targetRoom: "lobby-gedung-b",
             label: "Lobby Gedung B",
           },
@@ -294,7 +294,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-b",
-            position: { x: -12, y: -5, z: 22 },
+            position: { x: -28, y: -5, z: 15 },
             targetRoom: "lobby-gedung-b",
             label: "Lobby Gedung B",
           },
@@ -324,7 +324,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-kantin-c",
-            position: { x: -110, y: -18, z: 18 },
+            position: { x: 95, y: -13, z: 18 },
             targetRoom: "kantin-feb-c",
             label: "Kantin FEB",
           },
@@ -349,7 +349,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-c",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: 20, y: -5, z: -20 },
             targetRoom: "lobby-gedung-c",
             label: "Lobby Gedung C",
           },
@@ -406,13 +406,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-digilib-iup",
-            position: { x: 25, y: -5, z: 15 },
+            position: { x: 1, y: -5, z: 15 },
             targetRoom: "digilib-iup",
             label: "Digilib",
           },
           {
             id: "to-bloomberg-iup",
-            position: { x: -25, y: -5, z: 15 },
+            position: { x: -1, y: -5, z: 15 },
             targetRoom: "bloomberg-iup",
             label: "Bloomberg",
           },
@@ -425,7 +425,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-iup",
-            position: { x: -25, y: -5, z: -15 },
+            position: { x: 120, y: -5, z: 20 },
             targetRoom: "lobby-iup",
             label: "Lobby IUP",
           },
@@ -444,7 +444,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-iup",
-            position: { x: 25, y: -5, z: -15 },
+            position: { x: -8, y: -5, z: -15 },
             targetRoom: "lobby-iup",
             label: "Lobby IUP",
           },
@@ -598,7 +598,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-dekanat",
-            position: { x: 20, y: -5, z: 25 },
+            position: { x: 165, y: -5, z: 25 },
             targetRoom: "lobby-dekanat",
             label: "Lobby Dekanat",
           },
@@ -611,13 +611,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-pintu-utama",
-            position: { x: -20, y: -5, z: -25 },
+            position: { x: 0, y: -5, z: 25 },
             targetRoom: "pintu-utama-dekanat",
             label: "Pintu Utama Dekanat",
           },
           {
             id: "to-hall-pertamina",
-            position: { x: 25, y: -5, z: 20 },
+            position: { x: 180, y: -5, z: 20 },
             targetRoom: "hall-pertamina-dekanat",
             label: "Hall Pertamina",
           },
@@ -630,7 +630,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-dekanat",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: 0, y: -5, z: -20 },
             targetRoom: "lobby-dekanat",
             label: "Lobby Dekanat",
           },
@@ -660,7 +660,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-koperasi-pkm",
-            position: { x: 25, y: -5, z: 20 },
+            position: { x: 10, y: -5, z: 20 },
             targetRoom: "koperasi-pkm",
             label: "Koperasi PKM",
           },
@@ -673,7 +673,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-hall-pkm",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: -20, y: -5, z: -20 },
             targetRoom: "hall-pkm",
             label: "Hall PKM",
           },
