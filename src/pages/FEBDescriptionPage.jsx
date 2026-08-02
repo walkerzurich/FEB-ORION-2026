@@ -7,17 +7,17 @@ import ImageOptimizer from "@/components/ImageOptimizer";
 
 const departments = [
   {
-    icon: "🏛️",
+    icon: "",
     name: "Departemen Manajemen",
     programs: ["S1 Manajemen", "S1 Bisnis Digital", "S2 Magister Manajemen"],
   },
   {
-    icon: "📈",
+    icon: "",
     name: "Departemen Ilmu Ekonomi dan Studi Pembangunan (IESP)",
     programs: ["S1 Ekonomi", "S1 Ekonomi Islam", "S2 Magister Ekonomi"],
   },
   {
-    icon: "📊",
+    icon: "",
     name: "Departemen Akuntansi",
     programs: ["S1 Akuntansi", "S2 Magister Akuntansi", "Pendidikan Profesi Akuntan (PPAk)"],
   },
@@ -109,7 +109,7 @@ export default function FEBDescriptionPage() {
           {/* Departments */}
           <div className="feb-dept-section">
             <div className="feb-dept-title">
-              <span>🎓</span>
+              
               <span>Departemen dan Program Studi</span>
             </div>
 
@@ -122,7 +122,7 @@ export default function FEBDescriptionPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <span className="feb-dept-card-icon">{dept.icon}</span>
+                  
                   <div className="feb-dept-card-name">{dept.name}</div>
                   <ul>
                     {dept.programs.map((prog) => (
@@ -143,7 +143,7 @@ export default function FEBDescriptionPage() {
               <div className="feb-lanjutan-pills">
                 {doctorPrograms.map((prog) => (
                   <div key={prog} className="feb-lanjutan-pill">
-                    <span>🎖️</span>
+                    
                     <span>{prog}</span>
                   </div>
                 ))}

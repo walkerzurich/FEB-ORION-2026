@@ -31,7 +31,6 @@ const wakilDekanData = [
 const departmentLeadership = [
   {
     departmentName: "Departemen Akuntansi",
-    icon: "📊",
     prodis: [
       {
         prodiName: "S-1 Akuntansi",
@@ -52,7 +51,6 @@ const departmentLeadership = [
   },
   {
     departmentName: "Departemen Manajemen",
-    icon: "🏛️",
     prodis: [
       {
         prodiName: "S-1 Manajemen",
@@ -88,7 +86,6 @@ const departmentLeadership = [
   },
   {
     departmentName: "Departemen IESP (Ilmu Ekonomi dan Studi Pembangunan)",
-    icon: "📈",
     prodis: [
       {
         prodiName: "S-1 Ilmu Ekonomi",
@@ -274,7 +271,6 @@ export default function StaffPage() {
                 <div key={dept.departmentName} className="bg-[#271C51]/80 rounded-3xl p-6 sm:p-8 border border-[rgba(221,218,222,0.12)]">
                   {/* Title Dept */}
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-2xl">{dept.icon}</span>
                     <h3 className="text-white font-extrabold text-xl sm:text-2xl">
                       {dept.departmentName}
                     </h3>
@@ -321,12 +317,6 @@ export default function StaffPage() {
               ))}
             </div>
           </motion.div>
-
-          {/* Footer note */}
-          <p className="text-center text-xs italic text-[#DDDADE]/40 mt-12">
-            Data Struktur Kepemimpinan Fakultas Ekonomika dan Bisnis Universitas Diponegoro
-          </p>
-
         </div>
       </div>
     </>
