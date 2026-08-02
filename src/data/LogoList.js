@@ -2,13 +2,7 @@
 // Setiap entri: { name, shortName, logo, category }
 
 export const ormawaList = [
-  // ========== ORMAWA (Badan Legislatif & Eksekutif) ==========
-  {
-    name: "Senat Mahasiswa FEB",
-    shortName: "SENAT",
-    logo: "/images/Logo Ormawa dan UKM/SENAT.png",
-    category: "ormawa",
-  },
+  // ==================== DAFTAR ORMAWA (9) ====================
   {
     name: "Badan Eksekutif Mahasiswa FEB",
     shortName: "BEM FEB",
@@ -16,23 +10,15 @@ export const ormawaList = [
     category: "ormawa",
   },
   {
-    name: "Badan Audit Kemahasiswaan FEB",
-    shortName: "BAK",
-    logo: "/images/Logo Ormawa dan UKM/BAK.png",
+    name: "Senat Mahasiswa FEB",
+    shortName: "SENAT",
+    logo: "/images/Logo Ormawa dan UKM/SENAT.png",
     category: "ormawa",
   },
-
-  // ========== HIMPUNAN MAHASISWA ==========
   {
     name: "Management Student Association",
     shortName: "MSA",
     logo: "/images/Logo Ormawa dan UKM/MSA.png",
-    category: "ormawa",
-  },
-  {
-    name: "Keluarga Mahasiswa Akuntansi",
-    shortName: "KMA",
-    logo: "/images/Logo Ormawa dan UKM/KMA.png",
     category: "ormawa",
   },
   {
@@ -42,13 +28,37 @@ export const ormawaList = [
     category: "ormawa",
   },
   {
+    name: "Keluarga Mahasiswa Akuntansi",
+    shortName: "KMA",
+    logo: "/images/Logo Ormawa dan UKM/KMA.png",
+    category: "ormawa",
+  },
+  {
     name: "Islamic Economics Student Association",
     shortName: "IESA",
     logo: "/images/Logo Ormawa dan UKM/IESA.png",
     category: "ormawa",
   },
+  {
+    name: "Digital Business Society",
+    shortName: "DBS",
+    logo: "/images/Logo Ormawa dan UKM/DBS.png",
+    category: "ormawa",
+  },
+  {
+    name: "Badan Audit Kemahasiswaan FEB",
+    shortName: "BAK",
+    logo: "/images/Logo Ormawa dan UKM/BAK.png",
+    category: "ormawa",
+  },
+  {
+    name: "Lembaga Pers Mahasiswa Edents",
+    shortName: "LPM EDENTS",
+    logo: "/images/Logo Ormawa dan UKM/LPM EDENTS.png",
+    category: "ormawa",
+  },
 
-  // ========== UKM KEAGAMAAN ==========
+  // ==================== DAFTAR UKM (16) ====================
   {
     name: "Kerohanian Islam FEB",
     shortName: "MIZAN FEB",
@@ -67,22 +77,6 @@ export const ormawaList = [
     logo: "/images/Logo Ormawa dan UKM/7. PRMK.png",
     category: "ukm",
   },
-
-  // ========== UKM PERS & MEDIA ==========
-  {
-    name: "Lembaga Pers Mahasiswa Edents",
-    shortName: "LPM EDENTS",
-    logo: "/images/Logo Ormawa dan UKM/LPM EDENTS.png",
-    category: "ukm",
-  },
-  {
-    name: "Economic Voice",
-    shortName: "ECONOMIC VOICE",
-    logo: "/images/Logo Ormawa dan UKM/EV.png",
-    category: "ukm",
-  },
-
-  // ========== UKM OLAHRAGA ==========
   {
     name: "Economic Volleyball Club",
     shortName: "EVC",
@@ -90,15 +84,9 @@ export const ormawaList = [
     category: "ukm",
   },
   {
-    name: "UKM Bola dan Futsal",
-    shortName: "UKM BOLA & FUTSAL",
-    logo: "/images/Logo Ormawa dan UKM/logo ukm-f bola dan futsal.png",
-    category: "ukm",
-  },
-  {
-    name: "UKM Basket",
-    shortName: "UKM BASKET",
-    logo: "/images/Logo Ormawa dan UKM/BASKET.jpeg",
+    name: "Mahasiswa Pecinta Alam",
+    shortName: "FEPALA",
+    logo: "/images/Logo Ormawa dan UKM/12. fepala.png",
     category: "ukm",
   },
   {
@@ -108,33 +96,11 @@ export const ormawaList = [
     category: "ukm",
   },
   {
-    name: "Mahasiswa Pecinta Alam",
-    shortName: "FEPALA",
-    logo: "/images/Logo Ormawa dan UKM/12. fepala.png",
-    category: "ukm",
-  },
-
-  // ========== UKM SENI & BUDAYA ==========
-  {
     name: "Teater Buih",
     shortName: "TEATER BUIH",
     logo: "/images/Logo Ormawa dan UKM/14. teater buih.png",
     category: "ukm",
   },
-  {
-    name: "Economusic",
-    shortName: "ECONOMUSIC",
-    logo: "/images/Logo Ormawa dan UKM/logo economusic.png",
-    category: "ukm",
-  },
-  {
-    name: "UKM Tari",
-    shortName: "UKM TARI",
-    logo: "/images/Logo Ormawa dan UKM/LOGO UKM TARI.png",
-    category: "ukm",
-  },
-
-  // ========== UKM KAJIAN & STUDI ==========
   {
     name: "Bureau of Economic Policy",
     shortName: "BEP",
@@ -178,9 +144,15 @@ export const ormawaList = [
     category: "ukm",
   },
   {
-    name: "Digital Business Society",
-    shortName: "DBS",
-    logo: "/images/Logo Ormawa dan UKM/DBS.png",
+    name: "UKM Bola dan Futsal",
+    shortName: "UKM BOLA & FUTSAL",
+    logo: "/images/Logo Ormawa dan UKM/logo ukm-f bola dan futsal.png",
+    category: "ukm",
+  },
+  {
+    name: "UKM Basket",
+    shortName: "UKM BASKET",
+    logo: "/images/Logo Ormawa dan UKM/BASKET.jpeg",
     category: "ukm",
   },
 ];

@@ -324,19 +324,19 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-kantin-c",
-            position: { x: -25, y: -15, z: 20 },
+            position: { x: -110, y: -18, z: 18 },
             targetRoom: "kantin-feb-c",
             label: "Kantin FEB",
           },
           {
             id: "to-hall-c",
-            position: { x: 0, y: 15, z: 25 },
+            position: { x: 80, y: 3, z: 20 },
             targetRoom: "hall-gedung-c",
             label: "Hall Gedung C",
           },
           {
             id: "to-ruang-kelas-c",
-            position: { x: 25, y: -2, z: 15 },
+            position: { x: 172, y: -4, z: 12 },
             targetRoom: "ruang-kelas-c",
             label: "Ruang Kelas",
           },
@@ -363,7 +363,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lobby-c",
-            position: { x: -12, y: -5, z: 22 },
+            position: { x: -30, y: -5, z: 15 },
             targetRoom: "lobby-gedung-c",
             label: "Lobby Gedung C",
           },
@@ -531,13 +531,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-hall-kwu",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: -35, y: -5, z: -20 },
             targetRoom: "hall-kwu",
             label: "Hall KWU",
           },
           {
             id: "to-inside-inspiration-space",
-            position: { x: 25, y: -5, z: 20 },
+            position: { x: -100, y: -5, z: 20 },
             targetRoom: "inside-inspiration-space",
             label: "Inside Inspiration Space",
           },
@@ -550,7 +550,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-the-inspiration-space",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: 20, y: -5, z: -20 },
             targetRoom: "the-inspiration-space",
             label: "The Inspiration Space",
           },
@@ -563,7 +563,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-hall-kwu",
-            position: { x: 25, y: -5, z: -20 },
+            position: { x: 10, y: -5, z: 20 },
             targetRoom: "hall-kwu",
             label: "Hall KWU",
           },
@@ -576,7 +576,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-hall-kwu",
-            position: { x: 0, y: -5, z: 30 },
+            position: { x: 190, y: -5, z: 30 },
             targetRoom: "hall-kwu",
             label: "Hall KWU",
           },
