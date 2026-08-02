@@ -40,7 +40,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-gerbang-utama",
-            position: { x: 25, y: -5, z: -20 },
+            position: { x: 270, y: -5, z: -20 },
             targetRoom: "gerbang-utama",
             label: "Gerbang Utama",
           },
@@ -53,13 +53,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-gerbang-utama",
-            position: { x: -15, y: -5, z: -25 },
+            position: { x: -28, y: -5, z: -25 },
             targetRoom: "gerbang-utama",
             label: "Gerbang Utama",
           },
           {
             id: "to-lapang-ilovefeb",
-            position: { x: 20, y: -5, z: 20 },
+            position: { x: 330, y: -5, z: 20 },
             targetRoom: "lapang-ilovefeb",
             label: "Lapangan I Love FEB",
           },
@@ -72,7 +72,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-landmark",
-            position: { x: -20, y: -5, z: -20 },
+            position: { x: 60, y: -5, z: 25 },
             targetRoom: "landmark-feb",
             label: "Landmark FEB",
           },
@@ -91,13 +91,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-lapang-ilovefeb",
-            position: { x: -15, y: -5, z: -25 },
+            position: { x: 20, y: -5, z: 30 },
             targetRoom: "lapang-ilovefeb",
             label: "Lapangan I Love FEB",
           },
           {
             id: "to-lapangan-basket",
-            position: { x: 20, y: -5, z: 30 },
+            position: { x: 120, y: -5, z: 30 },
             targetRoom: "lapangan-basket",
             label: "Lapangan Basket",
           },
@@ -116,7 +116,7 @@ export const campusBuildings = [
           },
           {
             id: "to-pakardo",
-            position: { x: 25, y: -5, z: 25 },
+            position: { x: 30, y: -5, z: -30 },
             targetRoom: "pakardo",
             label: "Pakardo",
           },
@@ -135,7 +135,7 @@ export const campusBuildings = [
           },
           {
             id: "to-maseko",
-            position: { x: 20, y: -5, z: 20 },
+            position: { x: 300, y: -5, z: 20 },
             targetRoom: "maseko",
             label: "Maseko",
           },
@@ -148,13 +148,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-pakardo",
-            position: { x: -20, y: -5, z: -20 },
+            position: { x: 100, y: -5, z: 25 },
             targetRoom: "pakardo",
             label: "Pakardo",
           },
           {
             id: "to-dome",
-            position: { x: 15, y: -5, z: 25 },
+            position: { x: 150, y: -5, z: 25 },
             targetRoom: "dome-feb",
             label: "Dome FEB",
           },
@@ -167,13 +167,13 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-maseko",
-            position: { x: -15, y: -5, z: -25 },
+            position: { x: 300, y: -5, z: 25 },
             targetRoom: "maseko",
             label: "Maseko",
           },
           {
             id: "to-parkir-motor",
-            position: { x: 25, y: -5, z: 20 },
+            position: { x: 0, y: -5, z: 25 },
             targetRoom: "parkir-motor",
             label: "Parkir Motor",
           },
@@ -186,7 +186,7 @@ export const campusBuildings = [
         hotspots: [
           {
             id: "to-dome",
-            position: { x: -25, y: -5, z: -20 },
+            position: { x: 0, y: -5, z: -20 },
             targetRoom: "dome-feb",
             label: "Dome FEB",
           },
